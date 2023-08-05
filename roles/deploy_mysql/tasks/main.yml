@@ -1,0 +1,23 @@
+---
+- name: addrepo
+  copy: src=galera.list dest=/etc/apt/sources.list.d/galera.list
+  notify:
+   - apt_clean
+- meta: flush_handlers
+- name: add galera_pref
+  copy: src=galera.pref dest=/etc/apt/preferences.d/galera.pref
+- name: app galera-gpg key
+  command: apt-key adv --keyserver keyserver.ubuntu.com --recv BC19DDBA
+
+- name: update packages 
+  command: apt update
+
+- name: install mysql-galera packages 
+  apt:
+   name:
+    - galera-4
+    - mysql-wsrep-8.0
+      #  notify:
+      #  - stop_mysql
+- name: enable and start mysql service
+  systemd: name=mysqld enabled=yes state=start

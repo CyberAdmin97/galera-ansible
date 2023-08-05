@@ -1,0 +1,3 @@
+# Codership Repository (Galera Cluster for MySQL)
+deb https://releases.galeracluster.com/galera-4/ubuntu jammy main
+deb https://releases.galeracluster.com/mysql-wsrep-8.0/ubuntu jammy main
