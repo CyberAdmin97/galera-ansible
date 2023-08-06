@@ -17,7 +17,16 @@
    name:
     - galera-4
     - mysql-wsrep-8.0
+- name: stop ufw
+  ansible.builtin.systemd:
+    state: stopped
+    enabled: true
+    name: ufw
+
+      #- name: disable apparmor
+      #  command: ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/usr.sbin.mysqld
+      #  command: apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       #  notify:
       #  - stop_mysql
-- name: enable and start mysql service
-  systemd: name=mysqld enabled=yes state=start
+      #- name: enable and start mysql service
+      # systemd: name=mysqld enabled=yes state=start
