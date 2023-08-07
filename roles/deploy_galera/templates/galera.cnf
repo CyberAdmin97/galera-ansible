@@ -20,7 +20,7 @@ wsrep_sst_method=rsync
 
 
 # Galera Node Configuration
-wsrep_node_address="{{ ansible_all_ipv4_address | ipddr('10.114.0.0/20) | first }}"
+wsrep_node_address="{{ ansible_eth1.ipv4.address }}"
 wsrep_node_name="{{ ansible_host }}"
 
 
