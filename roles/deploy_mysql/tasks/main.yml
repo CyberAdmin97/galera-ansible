@@ -3,7 +3,6 @@
   copy: src=galera.list dest=/etc/apt/sources.list.d/galera.list
   notify:
    - apt_clean
-- meta: flush_handlers
 - name: add galera_pref
   copy: src=galera.pref dest=/etc/apt/preferences.d/galera.pref
 - name: app galera-gpg key
