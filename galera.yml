@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: nodes
   roles:
     - deploy_mysql
     - deploy_galera
