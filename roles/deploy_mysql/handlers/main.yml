@@ -1,3 +1,8 @@
 ---
 - name: apt_clean
   command: apt clean all
+
+- name: stop_mysqld
+  ansible.builtin.systemd:
+    state: stopped
+    name: mysqld

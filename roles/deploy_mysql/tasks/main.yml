@@ -17,6 +17,9 @@
    name:
     - galera-4
     - mysql-wsrep-8.0
+  notify:
+    - stop_mysqld
+
 - name: stop ufw
   ansible.builtin.systemd:
     state: stopped

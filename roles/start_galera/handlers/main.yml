@@ -1,0 +1,4 @@
+---
+- hosts: secundary
+  name: start_nodes
+  command: systemctl start mysqld

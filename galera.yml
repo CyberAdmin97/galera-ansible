@@ -3,4 +3,3 @@
   roles:
     - deploy_mysql
     - deploy_galera
-    - test_cluster

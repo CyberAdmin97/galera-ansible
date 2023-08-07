@@ -1,0 +1,6 @@
+---
+- hosts: primary
+- name: bootstrap and start the nodes
+  command: mysqld_bootstrap
+  notify: 
+    - start_nodes
